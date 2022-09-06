@@ -115,7 +115,7 @@ app.ready((err) => {
 });
 
 app.get('/', function (req, reply) {
-  reply.download('index.html', { cacheControl: false }); // serving a file disabling cache-control headers
+  reply.sendFile('index.html', { cacheControl: false }); // serving a file disabling cache-control headers
 });
 
 app.post('/login', function (req, reply) {
