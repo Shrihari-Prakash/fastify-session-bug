@@ -114,10 +114,8 @@ app.ready((err) => {
   });
 });
 
-app.get('/home', function (req, reply) {
-  fastify.get('/', function (req, reply) {
-    reply.download('index.html', { cacheControl: false }); // serving a file disabling cache-control headers
-  });
+app.get('/', function (req, reply) {
+  reply.download('index.html', { cacheControl: false }); // serving a file disabling cache-control headers
 });
 
 app.post('/login', function (req, reply) {
